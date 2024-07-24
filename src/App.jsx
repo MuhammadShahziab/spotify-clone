@@ -9,7 +9,7 @@ const App = () => {
   console.log(track, "check track");
   return (
     <div className="h-screen bg-black ">
-      <div className="h-[90%] flex">
+      <div className=" h-[87%] lg:h-[90%] flex">
         <Sidebar></Sidebar>
         <Display></Display>
       </div>

@@ -26,9 +26,8 @@ const DisplayAlbum = () => {
 
   return (
     <>
-      <Navbar></Navbar>
-
       <div className="px-2 md:px-3">
+        <Navbar></Navbar>
         <div className="flex flex-col  md:flex-row mt-5 gap-8 md:items-end ">
           <img className="w-32 rounded-md" src={albumDatabyId.image}></img>
           <div className="flex flex-col">
@@ -37,11 +36,23 @@ const DisplayAlbum = () => {
               {albumDatabyId.name}
             </h2>
             <h4>{albumDatabyId.desc}</h4>
-            <div className="mt-3 flex items-center">
-              <img className="w-5 inline-block" src={assets.spotify_logo}></img>
-              <b className="ms-1">Spotify</b>
-              <span className="ms-2 text-sm">1,432,564 Likes</span>
-              <span className="ms-2 text-sm">about {totalDuration()}</span>
+            <div className="mt-3 flex items-center justify-around">
+              <div>
+                <img
+                  className="w-5 inline-block"
+                  src={assets.spotify_logo}
+                ></img>
+                <b className="ms-1">Spotify</b>
+              </div>
+              <div className="flex md:flex-row flex-col items-center gap-x-1 ml-3">
+                <p>Likes</p>
+                <p>1,432,564</p>
+              </div>
+
+              <div className="flex items-center gap-x-1 md:flex-row flex-col">
+                <p>About</p>
+                <span className="ms-2 text-sm"> {totalDuration()}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -59,7 +70,7 @@ const DisplayAlbum = () => {
           <p>
             <b className="mr-4">#</b> Title
           </p>
-          <p>Album</p>
+          <p className=" ml-3">Album</p>
           <p className="hidden sm:block">Date Added</p>
           <img className="w-4 mx-auto" src={assets.clock_icon}></img>
         </div>
@@ -74,12 +85,15 @@ const DisplayAlbum = () => {
               "bg-[#ffffff2b] text-primary font-semibold rounded"
             } grid grid-cols-3 sm:grid-cols-4 gap-2 p-2  hover:bg-[#ffffff2b] cursor-pointer rounded my-1`}
           >
-            <p>
-              <b className="mr-4">{index + 1}</b>
-              <img className="w-10 inline mr-4" src={item.image}></img>
-              {item.name}
-            </p>
-            <p className="flex items-center">{albumDatabyId.name}</p>
+            <div className="flex md:flex-row flex-col  items-center">
+              <p className=" mr-4">
+                <b className="mr-4">{index + 1}</b>
+                <img className="w-10 inline mr-4" src={item.image}></img>
+              </p>
+              <p className="text-sm">{item.name}</p>
+            </div>
+
+            <p className="flex items-center text-sm">{albumDatabyId.name}</p>
             <p className="text-sm hidden sm:flex items-center ">2 days ago</p>
             <p className="mx-auto flex items-center text-sm">{item.duration}</p>
           </div>
