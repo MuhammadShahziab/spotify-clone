@@ -16,7 +16,7 @@ const Player = () => {
     previous,
   } = useContext(playerContext);
   return (
-    <div className="h-[13%] lg:h-[10%]  flex justify-between  items-center px-4 fixed bottom-0 left-0 right-0">
+    <div className=" h-[10%]  flex justify-between  items-center px-4 fixed bottom-0 left-0 right-0">
       <div className="hidden lg:flex items-center gap-4">
         <img className="w-12" src={track.image}></img>
         <div>

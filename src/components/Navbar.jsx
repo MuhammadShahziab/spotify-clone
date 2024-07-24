@@ -35,7 +35,7 @@ const Navbar = () => {
       </div>
 
       {!isAlbum && (
-        <div className="flex gap-2 items-center mt-4 md:ml-1 lg:mt-2">
+        <div className="flex gap-2 items-center mt-4 ml-1 lg:mt-2">
           <p className="bg-white px-4 font-semibold py-1 rounded-2xl text-black cursor-pointer">
             All
           </p>
